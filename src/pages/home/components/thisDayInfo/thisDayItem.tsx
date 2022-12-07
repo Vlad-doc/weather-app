@@ -10,12 +10,12 @@ interface Props {
 const ThisDayItem = ({ item }: Props) => {
   const { icon_id, value, name } = item
   return (
-    <div key={item.icon_id} className={s.item}>
-      <div className="s.indicator">
+    <div className={s.item}>
+      <div className={s.indicator}>
         <IndicatorSVGSelector id={icon_id} />
       </div>
-      <div className="s.indicator__name">{name}</div>
-      <div className="s.indicator__value">{value}</div>
+      <div className={s.indicator__name}>{name}</div>
+      <div className={s.indicator__value}>{value}</div>
     </div>
   )
 }
