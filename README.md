@@ -44,3 +44,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Figma page
+
+https://www.figma.com/file/9gG8IhwkkrcmyVCQ7vBd2n/React-weather?node-id=2%3A3&t=keraKio6tLGwLeao-0
