@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { Home } from "./pages/home/components/home"
 import { MonthStatistics } from "./pages/monthStatistics/components/monthStatistics"
 import { Header } from "./shared/header/header"
+import { Popup } from "./shared/popup/popup"
 import "./styles/index.scss"
 
 const router = createBrowserRouter([
@@ -18,9 +19,12 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div className="container">
-      <Header />
-      <RouterProvider router={router} />
+    <div className="global-container">
+      <Popup />
+      <div className="container">
+        <Header />
+        <RouterProvider router={router} />
+      </div>
     </div>
   )
 }
