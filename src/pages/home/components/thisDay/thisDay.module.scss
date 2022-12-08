@@ -28,7 +28,7 @@
   .this__day_name {
     font-size: 40px;
     line-height: 49px;
-    color: $light-color;
+    color: var(#{--text-color-default});
   }
 }
 

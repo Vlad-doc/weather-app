@@ -5,7 +5,7 @@
   padding: 30px 40px;
   max-width: 750px;
   width: 100%;
-  background: $light-background;
+  background: var(#{--components-background-default});
   box-shadow: $box-shadow;
   border-radius: $border-radius;
 }
@@ -29,7 +29,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ffffff;
+    background-color: var(#{--components-background-default});
     box-shadow: 1px 4px 10px -1px rgba(71, 147, 255, 0.2);
     border-radius: 50%;
   }
@@ -43,7 +43,7 @@
     color: $base-color;
   }
   .indicator__value {
-    color: $light-color;
+    color: var(#{--text-color-default});
   }
 }
 
