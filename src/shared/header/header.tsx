@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import s from "./header.module.scss"
 import { GlobalSvgSelector } from "../../assets/icons/global/globalSvgSelector"
 import Select from "react-select"
+import { useTheme } from "../../hooks/useTheme"
 
 type Props = {}
 
 export const Header = (props: Props) => {
-  const [theme, setTheme] = useState("light")
-  const changeTheme = () => setTheme(theme === "light" ? "dark" : "light")
+  const theme = useTheme()
+  const changeTheme = () =>
+    theme.changeTheme(theme.theme === "light" ? "dark" : "light")
   useEffect(() => {
     const root = document.querySelector(":root") as HTMLElement
     const components = [
@@ -18,9 +20,9 @@ export const Header = (props: Props) => {
       "text-color",
     ]
     components.forEach((str) => {
-      root.style.setProperty(`--${str}-default`, `var(--${str}-${theme})`)
+      root.style.setProperty(`--${str}-default`, `var(--${str}-${theme.theme})`)
     })
-  }, [theme])
+  }, [theme.theme])
 
   const options = [
     { value: "spb", label: "St. Petersburg" },
@@ -30,7 +32,8 @@ export const Header = (props: Props) => {
   const colorStyles = {
     control: (styles: any) => ({
       ...styles,
-      backgroundColor: theme === "dark" ? "#4f4f4f" : "rgba(71, 147, 255, 0.2)",
+      backgroundColor:
+        theme.theme === "dark" ? "#4f4f4f" : "rgba(71, 147, 255, 0.2)",
       width: "192px",
       height: "37px",
       border: "none",
@@ -39,7 +42,7 @@ export const Header = (props: Props) => {
     }),
     singleValue: (styles: any) => ({
       ...styles,
-      color: theme === "dark" ? "#fff" : "#000000",
+      color: theme.theme === "dark" ? "#fff" : "#000000",
     }),
   }
   return (

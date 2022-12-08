@@ -43,6 +43,7 @@
   }
   .temp__night {
     margin-bottom: 6px;
+    color: $base-color;
   }
   &:hover {
     box-shadow: var(#{--card-shadow-default});
